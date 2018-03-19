@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<process version="6.5.002">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="6.5.002" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="resultfile" value="/home/erdi/dm/spot_data/history/2015/03/results.res"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="read_performance" compatibility="6.5.002" expanded="true" height="60" name="Read Performance" width="90" x="45" y="30">
+        <parameter key="performance_file" value="/home/erdi/dm/spot_data/history/2015/03/design/2015-03-02.csv-vs-2015-03-03.mod.per"/>
+      </operator>
+      <operator activated="true" class="performance_to_data" compatibility="6.5.002" expanded="true" height="76" name="Performance to Data" width="90" x="246" y="30"/>
+      <operator activated="true" class="write_csv" compatibility="6.5.002" expanded="true" height="76" name="Write CSV" width="90" x="447" y="30">
+        <parameter key="csv_file" value="aaa.csv.aaa"/>
+        <parameter key="column_separator" value=","/>
+        <parameter key="write_attribute_names" value="false"/>
+        <parameter key="quote_nominal_values" value="false"/>
+        <parameter key="format_date_attributes" value="false"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <connect from_op="Read Performance" from_port="output" to_op="Performance to Data" to_port="performance vector"/>
+      <connect from_op="Performance to Data" from_port="example set" to_op="Write CSV" to_port="input"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+    </process>
+  </operator>
+</process>
