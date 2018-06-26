@@ -1,3 +1,5 @@
+![Image](http://www.actoncloud.com/blog/wp-content/uploads/2017/08/aws-spot-instance.png)
+
 ### Forecasting AWS Spot Price by using Adaboosting on Rapidminer
 
 |__Problem__|__Data__|__Methods__|__Libs__|__Link__|
