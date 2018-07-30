@@ -1,4 +1,4 @@
-![Image](http://www.actoncloud.com/blog/wp-content/uploads/2017/08/aws-spot-instance.png)
+![Image](https://image.slidesharecdn.com/leveragingelasticweb-scalecomputingwithaws-150326210749-conversion-gate01/95/leveraging-elastic-web-scale-computing-with-aws-5-638.jpg?cb=1463633063)
 
 ### Forecasting AWS Spot Price by using Adaboosting on Rapidminer
 
